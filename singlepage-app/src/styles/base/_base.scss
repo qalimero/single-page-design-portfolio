@@ -2,6 +2,12 @@
 BASE STYLES
 ===================== */
 
-@import "global";
-@import "layout";
-@import "typography";
+@use 'global';
+@use 'layout';
+@use 'typography';
+
+/* =====================
+ATOMS STYLES
+===================== */
+
+

@@ -1,0 +1,55 @@
+/* =====================
+BREAKPOINTS
+===================== */
+
+$breakpoints: (
+  small : 375px,
+  medium: 768px,
+  large : 1440px
+);
+
+@mixin mq($mq-breakpoint, $mq-breakpoints: $breakpoints) {
+  // If $mq-breakpoint is a key that exists in
+  // $mq-breakpoints, get and use the value
+  @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+    $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
+  }
+  @media screen and (min-width: #{$mq-breakpoint}) {
+    @content;
+  }
+}
+
+/* =====================
+DESIGN SYSTEM
+===================== */
+
+//set color variables for project
+
+$colors: (
+  black: black,
+  white: white,
+  medium-grey: #7A746E,
+  light-cream: #FFF7F0,
+  galactic-blue: #755CDE,
+  summer-yellow: #F6A560,
+  primary-pink: #F39E9E,
+  light-red: #EB7565,
+  primary-cyan: #61C4B7,
+  dark-purple: #552049,
+);
+
+//set sizes-typo variables for project
+
+$size: (
+  heading: (
+    large: 3.5rem,
+    medium: 2.5rem,
+    small: 2rem,
+  ),
+  text: (
+    large: 1.5rem,
+    medium: 1.125rem,
+    small: 1rem,
+  )
+);
+
