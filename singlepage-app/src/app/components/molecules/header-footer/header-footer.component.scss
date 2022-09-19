@@ -1,0 +1,8 @@
+app-header-footer {
+  display: table;
+  app-button,
+  app-image{
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
