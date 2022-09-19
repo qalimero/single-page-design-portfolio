@@ -7,6 +7,9 @@ import { ImageComponent } from "./components/atoms/image/image.component";
 import { TextComponent } from './components/atoms/text/text.component';
 import { HeaderFooterComponent } from './components/molecules/header-footer/header-footer.component';
 import { ButtonComponent } from './components/atoms/button/button.component';
+import { HomeComponent } from './components/templates/home/home.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import {CdkListboxModule} from "@angular/cdk/listbox";
 
 
 @NgModule({
@@ -16,11 +19,14 @@ import { ButtonComponent } from './components/atoms/button/button.component';
     TextComponent,
     HeaderFooterComponent,
     ButtonComponent,
+    HomeComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    CdkListboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

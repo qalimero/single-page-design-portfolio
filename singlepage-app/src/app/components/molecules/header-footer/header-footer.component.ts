@@ -14,5 +14,4 @@ export class HeaderFooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

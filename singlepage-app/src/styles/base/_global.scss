@@ -54,7 +54,19 @@ $size: (
 );
 
 /* =====================
-LAYOUT GLOBAL
+BUTTON VARIABLE
 ===================== */
+$btnStyle: (
+  btnSize:(
+    mobile: 0.8rem,
+    tablet: 1rem,
+  ),
+  btnColor:(
+    btnHeaderFooterColor: map-get($colors, black),
+    btnBody: map-get($colors, light-red),
+  )
+);
+
+
 
 

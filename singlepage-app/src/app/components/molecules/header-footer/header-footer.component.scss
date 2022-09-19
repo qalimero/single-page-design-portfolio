@@ -1,8 +1,13 @@
-app-header-footer {
+.header-footer {
   display: table;
+  margin-top: 1rem;
+  width: 100%;
   app-button,
   app-image{
     display: table-cell;
     vertical-align: middle;
+  }
+  app-button {
+    text-align: right;
   }
 }
