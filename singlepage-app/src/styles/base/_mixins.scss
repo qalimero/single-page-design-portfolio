@@ -1,0 +1,21 @@
+/* =====================
+BUTTON MIXINS
+===================== */
+@mixin btn($color:false,$bgColor:false,$size:false,$hoverBgColor:false){
+  button {
+    @if $color {
+      color: $color;
+    }
+    @if $bgColor {
+      background-color: $bgColor;
+    }
+    @if $size {
+      font-size: $size;
+    }
+    @if $hoverBgColor {
+      &:hover {
+        background-color: $hoverBgColor;
+      }
+    }
+  }
+}

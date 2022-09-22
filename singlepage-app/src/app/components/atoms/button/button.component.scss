@@ -1,10 +1,13 @@
+@use './../../../../styles/base/mixins' as mix;
+@use './../../../../styles/base/global' as var;
 .btn {
   padding: 0.5rem 1.7rem;
   border-radius: 1.8rem;
   border-color: transparent;
+
   &__headerFooter {
-    background-color: color(btnStyle, btnColor, btnHeaderFooterColor);
-    font-size: color(btnStyle, btnSize, mobile);
+    color: map.get(var.$btnColor(var.$colors, white));
+    @include mix.btn(map.get(var.$colors, white));
   }
 }
 

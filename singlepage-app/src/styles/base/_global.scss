@@ -20,6 +20,11 @@ $breakpoints: (
 }
 
 /* =====================
+FUNCTION
+===================== */
+
+
+/* =====================
 DESIGN SYSTEM
 ===================== */
 
@@ -38,8 +43,6 @@ $colors: (
   dark-purple: #552049,
 );
 
-//set sizes-typo variables for project
-
 $size: (
   heading: (
     large: 3.5rem,
@@ -56,16 +59,20 @@ $size: (
 /* =====================
 BUTTON VARIABLE
 ===================== */
-$btnStyle: (
-  btnSize:(
+
+  $btnSize:(
     mobile: 0.8rem,
     tablet: 1rem,
-  ),
-  btnColor:(
+  );
+  $btnColor:(
     btnHeaderFooterColor: map-get($colors, black),
     btnBody: map-get($colors, light-red),
-  )
-);
+  );
+
+
+
+
+
 
 
 
