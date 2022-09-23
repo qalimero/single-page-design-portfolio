@@ -31,8 +31,8 @@ DESIGN SYSTEM
 //set color variables for project
 
 $colors: (
-  black: black,
-  white: white,
+  primary-black: #000000,
+  primary-white: #FFFFFF,
   medium-grey: #7A746E,
   light-cream: #FFF7F0,
   galactic-blue: #755CDE,
@@ -65,8 +65,8 @@ BUTTON VARIABLE
     tablet: 1rem,
   );
   $btnColor:(
-    btnHeaderFooterColor: map-get($colors, black),
-    btnBody: map-get($colors, light-red),
+    btnHeaderFooterColor: map-get($colors, "primary-black"),
+    btnBody: map-get($colors, "light-red"),
   );
 
 

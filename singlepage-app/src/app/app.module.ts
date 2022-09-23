@@ -9,7 +9,7 @@ import { HeaderFooterComponent } from './components/molecules/header-footer/head
 import { ButtonComponent } from './components/atoms/button/button.component';
 import { HomeComponent } from './components/templates/home/home.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import {CdkListboxModule} from "@angular/cdk/listbox";
+import { CdkListboxModule } from "@angular/cdk/listbox";
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import {CdkListboxModule} from "@angular/cdk/listbox";
     BrowserModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    CdkListboxModule
+    CdkListboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

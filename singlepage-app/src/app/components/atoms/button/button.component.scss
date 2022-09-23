@@ -1,13 +1,17 @@
-@use './../../../../styles/base/mixins' as mix;
-@use './../../../../styles/base/global' as var;
-.btn {
-  padding: 0.5rem 1.7rem;
-  border-radius: 1.8rem;
-  border-color: transparent;
+@use "sass:map";
+@import './../../../../styles/base/mixins';
+@import './../../../../styles/base/global';
 
-  &__headerFooter {
-    color: map.get(var.$btnColor(var.$colors, white));
-    @include mix.btn(map.get(var.$colors, white));
+button {
+  .btn {
+    padding: 0.5rem 1.7rem;
+    border-radius: 1.8rem;
+    border-color: transparent;
+
+    &__headerFooter {
+      @include btn(map.get($btnColor, btnHeaderFooterColor));
+    }
   }
 }
+
 
