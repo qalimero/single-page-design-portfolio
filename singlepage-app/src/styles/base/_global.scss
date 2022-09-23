@@ -1,4 +1,10 @@
 /* =====================
+IMPORTS
+===================== */
+
+@use "sass:map";
+
+/* =====================
 BREAKPOINTS
 ===================== */
 
@@ -65,8 +71,8 @@ BUTTON VARIABLE
     tablet: 1rem,
   );
   $btnColor:(
-    btnHeaderFooterColor: map-get($colors, "primary-black"),
-    btnBody: map-get($colors, "light-red"),
+    btnHeaderFooterColor: map.get($colors, primary-black),
+    btnBody: map.get($colors, light-red),
   );
 
 

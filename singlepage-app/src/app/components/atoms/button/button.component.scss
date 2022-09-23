@@ -2,16 +2,14 @@
 @import './../../../../styles/base/mixins';
 @import './../../../../styles/base/global';
 
-button {
-  .btn {
-    padding: 0.5rem 1.7rem;
-    border-radius: 1.8rem;
-    border-color: transparent;
+:host{
+    .btn {
+      padding: 0.5rem 1.7rem;
+      border-radius: 1.8rem;
+      border-color: transparent;
 
-    &__headerFooter {
-      @include btn(map.get($btnColor, btnHeaderFooterColor));
+      &__headerFooter {
+        @include btn(map.get($btnColor, btnHeaderFooterColor));
+      }
     }
   }
-}
-
-
