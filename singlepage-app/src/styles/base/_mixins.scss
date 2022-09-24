@@ -19,3 +19,35 @@ BUTTON MIXINS
     }
   }
 }
+
+/* =====================
+COLOR + TEXT SIZE + LETTER SPACING + LINE HEIGHT + TEXT TRANSFORM
+===================== */
+
+@mixin text-style($color: false, $size: false, $letterSpacing:false,  $lineHeight: false,
+$transform :false, $style: false, $align: false, $weight: false, $aliasing: false) {
+  @if $color {
+    color: $color;
+  }
+  @if $size {
+    font-size: $size;
+  }
+  @if $letterSpacing {
+    letter-spacing: $letterSpacing;
+  }
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+  @if $transform {
+    text-transform: $transform;
+  }
+  @if $style {
+    font-style: $style;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $align {
+    text-align: $align;
+  }
+}

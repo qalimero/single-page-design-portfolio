@@ -1,3 +1,7 @@
+@import './../../styles/base/global';
+body {
+  background-color: $backgroundColor;
+}
 .layout {
   display: grid;
   margin: 0 1rem;

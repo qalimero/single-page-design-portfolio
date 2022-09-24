@@ -1,1 +1,8 @@
+@import './../../../../styles/base/global';
+
+.image {
+  &--header {
+    width: $size_48;
+  }
+}
 
