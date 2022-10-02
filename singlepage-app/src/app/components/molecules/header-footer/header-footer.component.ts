@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header-footer',
@@ -6,11 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-footer.component.scss']
 })
 export class HeaderFooterComponent implements OnInit {
-  headerFooter =
+  headerFooterImage =
     {
       src: 'assets/images/logo.svg',
     };
-  constructor() { }
+  constructor( private el: ElementRef ) {
+    console.log(this.el.nativeElement)
+  }
 
   ngOnInit(): void {
   }
