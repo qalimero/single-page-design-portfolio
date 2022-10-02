@@ -3,5 +3,5 @@
 @import './../../../../styles/base/global';
 
 .title-h1 {
-  @include text-style($color:map.get($colors, primary-black), $size: map.get(map.get($size, heading), "small"), $lineHeight: map.get(map.get($size, lineHeightMobile), "header"), $align: center, $weight: 700);
+  @include text-style($color: mapColor(primary-black), $size: textSize(heading, small),$lineHeight: textSize(lineHeightMobile, h1), $align: center, $weight: 700);
 }

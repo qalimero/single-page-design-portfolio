@@ -7,11 +7,14 @@ import {TitleH1Component} from "./atoms/title-h1/title-h1.component";
 import {HeaderFooterComponent} from "./molecules/header-footer/header-footer.component";
 import {HomeComponent} from "./templates/home/home.component";
 import {HomepageComponent} from "../pages/homepage/homepage.component";
+import { GridListComponent } from './grid-list/grid-list.component';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MatGridListModule
   ],
   exports: [
     ButtonComponent,
@@ -29,7 +32,8 @@ import {HomepageComponent} from "../pages/homepage/homepage.component";
     TitleH1Component,
     HeaderFooterComponent,
     HomeComponent,
-    HomepageComponent
+    HomepageComponent,
+    GridListComponent
   ]
 })
 export class ComponentsModule {

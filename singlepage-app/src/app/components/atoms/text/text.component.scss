@@ -3,5 +3,5 @@
 @import './../../../../styles/base/global';
 
 .paragraph {
-  @include text-style($color:map.get($colors,"medium-grey"), $size: map.get(map.get($size, text),"small"), $lineHeight: map.get(map.get($size, lineHeightMobile), "paragraph"), $align: center, $weight: 500);
+  @include text-style($color: mapColor(medium-grey), $size: textSize(text, small), $lineHeight: textSize(lineHeightMobile, paragraph), $align: center, $weight: 500);
 }

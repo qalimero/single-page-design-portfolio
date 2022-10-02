@@ -51,3 +51,26 @@ $transform :false, $style: false, $align: false, $weight: false, $aliasing: fals
     text-align: $align;
   }
 }
+
+/* =====================
+BTN BG COLOR / BORDER-COLOR AND RADIUS
+===================== */
+@mixin btn($bgColor: false, $borderRadius: false, $borderColor: false, $paddingVertical: false, $paddingHorizontal: false ){
+  @if $bgColor {
+    background-color: $bgColor;
+  }
+  @if $borderRadius {
+    border-radius: $borderRadius;
+  }
+  @if $borderColor {
+    border-color: $borderColor;
+  }
+  @if $paddingVertical {
+    padding-left: $paddingVertical;
+    padding-right: $paddingVertical;
+  }
+  @if $paddingHorizontal {
+    padding-top: $paddingHorizontal;
+    padding-bottom: $paddingHorizontal;
+  }
+}

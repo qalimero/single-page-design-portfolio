@@ -5,6 +5,68 @@ IMPORTS
 @use "sass:map";
 
 /* =====================
+SIZE VARIABLE
+===================== */
+
+$size_0: 0rem;
+$size_2: .125rem;
+$size_4: .25rem;
+$size_6: .375rem;
+$size_8: 0.5rem;
+$size_9: 0.5625rem;
+$size_10: .625rem;
+$size_11: .6875rem;
+$size_12: .75rem;
+$size_13: .8125rem;
+$size_14: .875rem;
+$size_15: .9375rem;
+$size_16: 1rem;
+$size_17: 1.0625rem;
+$size_18: 1.125rem;
+$size_19: 1.1875rem;
+$size_20: 1.25rem;
+$size_21: 1.3125rem;
+$size_22: 1.375rem;
+$size_23: 1.4375rem;
+$size_24: 1.5rem;
+$size_25: 1.5625rem;
+$size_26: 1.625rem;
+$size_27: 1.6875rem;
+$size_28: 1.75rem;
+$size_29: 1.8125rem;
+$size_30: 1.875rem;
+$size_31: 1.9375rem;
+$size_32: 2rem;
+$size_33: 2.06rem;
+$size_34: 2.125rem;
+$size_35: 2.1875rem;
+$size_36: 2.25rem;
+$size_37: 2.3125rem;
+$size_38: 2.375rem;
+$size_40: 2.5rem;
+$size_41: 2.5625rem;
+$size_42: 2.625rem;
+$size_43: 2.6875rem;
+$size_44: 2.75rem;
+$size_45: 2.813rem;
+$size_46: 2.875rem;
+$size_48: 3rem;
+$size_50 : 3.125rem;
+$size_52 : 3.25rem;
+$size_54 : 3.375rem;
+$size_55 : 3.4375rem;
+$size_56 : 3.5rem;
+$size_58 : 3.625rem;
+$size_59 : 3.688rem;
+$size_60 : 3.75rem;
+$size_62 : 3.85rem;
+$size_64 : 4rem;
+$size_65 : 4.0625rem;
+$size_68 : 4.25rem;
+$size_70 : 4.37rem;
+
+
+/* =====================
 BREAKPOINTS
 ===================== */
 
@@ -29,6 +91,20 @@ $breakpoints: (
 FUNCTION
 ===================== */
 
+//call a color stock in map to call them in another functions
+@function mapColor ($value) {
+  @return map.get($colors, $value)
+};
+
+//call sizing for text element
+@function textSize ($typeText, $size) {
+  @return map.get(map.get($textSize, $typeText), $size)
+};
+
+//call maps for btnStyle
+@function btnStyle ($style, $property) {
+  @return map.get(map.get($btnStyle, $style), $property)
+};
 
 /* ==========================================
 DESIGN SYSTEM
@@ -37,8 +113,8 @@ DESIGN SYSTEM
 //set color variables for project
 
 $colors: (
-  primary-black: #000000,
   primary-white: #FFFFFF,
+  primary-black: #030303,
   medium-grey: #7A746E,
   light-cream: #FFF7F0,
   galactic-blue: #755CDE,
@@ -49,90 +125,41 @@ $colors: (
   dark-purple: #552049,
 );
 
-$size: (
+$backgroundColor: mapColor(light-cream);
+
+$textSize: (
   heading: (
-    large: 3.5rem,
-    medium: 2.5rem,
-    small: 2rem,
+    large: $size_56,
+    medium: $size_40,
+    small: $size_32,
   ),
   text: (
-    large: 1.5rem,
-    medium: 1.125rem,
-    small: 1rem,
+    medium: $size_18,
+    small: $size_16,
   ),
   lineHeightMobile: (
-    header: 2.81rem,
-    paragraph: 1.62rem
-)
+    h1: $size_45,
+    paragraph: $size_26,
+  )
 );
 
 /* =====================
 BUTTON VARIABLE
 ===================== */
+
 $btnStyle: (
-  btnSize:(
-    mobile: 0.8rem,
-    tablet: 1rem,
+  size: (
+    mobile: $size_14,
+    tablet: $size_16,
   ),
-  btnColor:(
-    btnHeaderFooterColor: map.get($colors, 'summer-yellow'),
-    btnBody: map.get($colors, 'light-red'),
+  color: (
+    btnHeaderFooter:mapColor(primary-white),
+    btnBody: mapColor(light-red),
+  ),
+  bgColor: (
+    primary :mapColor(primary-black),
+  ),
+  lineHeight: (
+    mobile: $size_28,
   )
 );
-
-
-/* =====================
-SIZE VARIABLE
-===================== */
-
-$size_0 : 0rem;
-$size_2  : .125 rem;
-$size_4  : .25rem;
-$size_6  : .375rem;
-$size_8  : 0.5rem;
-$size_9  : 0.5625rem;
-$size_10 : .625rem;
-$size_11 : .6875rem;
-$size_12 : .75rem;
-$size_13 : .8125rem;
-$size_14 : .875rem;
-$size_15 : .9375rem;
-$size_16 : 1rem;
-$size_17 : 1.0625rem;
-$size_18 : 1.125rem;
-$size_19 : 1.1875rem;
-$size_20 : 1.25rem;
-$size_21 : 1.3125rem;
-$size_22 : 1.375rem;
-$size_23 : 1.4375rem;
-$size_24 : 1.5rem;
-$size_25 : 1.5625rem;
-$size_26 : 1.625rem;
-$size_27 : 1.6875rem;
-$size_28 : 1.75rem;
-$size_29 : 1.8125rem;
-$size_30 : 1.875rem;
-$size_31 : 1.9375rem;
-$size_32 : 2rem;
-$size_33 : 2.06rem;
-$size_34 : 2.125rem;
-$size_35 : 2.1875rem;
-$size_36 : 2.25rem;
-$size_37 : 2.3125rem;
-$size_38 : 2.375rem;
-$size_40 : 2.5rem;
-$size_41 : 2.5625rem;
-$size_42 : 2.625rem;
-$size_43 : 2.6875rem;
-$size_44 : 2.75rem;
-$size_45 : 2.813rem;
-$size_46 : 2.875rem;
-$size_48 : 3rem;
-
-$backgroundColor: map.get($colors, light-cream);
-
-
-
-
-
-
