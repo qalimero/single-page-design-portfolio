@@ -1,12 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-  img: string;
-}
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-grid-list',
@@ -14,8 +6,13 @@ export interface Tile {
   styleUrls: ['./grid-list.component.scss']
 })
 export class GridListComponent implements OnInit {
+  headerFooterImage =
+    {
+      img1: '../../assets/images/pattern-graphic-design.svg'
+    };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
