@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./image.component.scss']
 })
 export class ImageComponent implements OnInit {
-  @Input() src = '';
+  @Input() srcToAdd = '';
   @Input() height = 'auto';
   @Input() width = 'auto';
   @Input() alt = '';

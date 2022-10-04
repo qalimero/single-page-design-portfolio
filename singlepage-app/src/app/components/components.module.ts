@@ -7,14 +7,13 @@ import {TitleH1Component} from "./atoms/title-h1/title-h1.component";
 import {HeaderFooterComponent} from "./molecules/header-footer/header-footer.component";
 import {HomeComponent} from "./templates/home/home.component";
 import {HomepageComponent} from "../pages/homepage/homepage.component";
-import { GridListComponent } from './grid-list/grid-list.component';
-import {MatGridListModule} from "@angular/material/grid-list";
+import { CardComponent } from './molecules/card/card.component';
+import { CardGridComponent } from './organisms/card-grid/card-grid.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    MatGridListModule
   ],
   exports: [
     ButtonComponent,
@@ -33,7 +32,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     HeaderFooterComponent,
     HomeComponent,
     HomepageComponent,
-    GridListComponent
+    CardComponent,
+    CardGridComponent,
   ]
 })
 export class ComponentsModule {
