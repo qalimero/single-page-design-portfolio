@@ -12,9 +12,9 @@ export class CardGridComponent implements OnInit {
       img1: 'assets/images/pattern-graphic-design.svg',
       img2: 'assets/images/pattern-ui-ux.svg',
       img3: 'assets/images/pattern-apps.svg',
-      img4: 'assets/images/logo.svg',
-      img5: 'assets/images/logo.svg',
-      img6: 'assets/images/logo.svg',
+      img4: 'assets/images/pattern-illustrations.svg',
+      img5: 'assets/images/pattern-photography.svg',
+      img6: 'assets/images/pattern-motion-graphics.svg',
     };
 
   constructor() { }
