@@ -1,7 +1,9 @@
-@use "sass:map";
 @import './../../../../styles/base/mixins';
 @import './../../../../styles/base/global';
 
 .paragraph {
   @include text-style($color: mapColor(medium-grey), $size: textSize(text, small), $lineHeight: textSize(lineHeightMobile, paragraph), $align: center, $weight: 500);
+  &__card{
+  @include text-style($color: mapColor(primary-white), $size: textSize(text, card), $weight: 700);
+  }
 }

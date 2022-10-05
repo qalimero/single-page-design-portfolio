@@ -7,7 +7,6 @@ import {TitleH1Component} from "./atoms/title-h1/title-h1.component";
 import {HeaderFooterComponent} from "./molecules/header-footer/header-footer.component";
 import {HomeComponent} from "./templates/home/home.component";
 import {HomepageComponent} from "../pages/homepage/homepage.component";
-import { CardComponent } from './molecules/card/card.component';
 import { CardGridComponent } from './organisms/card-grid/card-grid.component';
 
 
@@ -32,7 +31,6 @@ import { CardGridComponent } from './organisms/card-grid/card-grid.component';
     HeaderFooterComponent,
     HomeComponent,
     HomepageComponent,
-    CardComponent,
     CardGridComponent,
   ]
 })
