@@ -4,5 +4,11 @@ body {
 }
 .layout {
   display: grid;
-  margin: 0 1rem;
+  margin: 0 $size_16;
+  @include mq(medium) {
+    margin: 0 $size_40;
+  }
+  @include mq(large) {
+    margin: 0 $size_165;
+  }
 }
