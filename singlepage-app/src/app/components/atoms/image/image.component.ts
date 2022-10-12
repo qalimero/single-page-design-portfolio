@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ImageComponent implements OnInit {
   @Input() srcToAdd = '';
+  @Input() classToAdd = '';
   @Input() alt = '';
 
   constructor() { }

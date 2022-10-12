@@ -77,12 +77,27 @@
   }
   @include mq(large) {
     grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "area1 area1 area2 area3 area4 area4"
+    "area1 area1 area5 area5 area6 area6";
     &__item {
       &:nth-of-type(1) {
-        grid-area: 1 / 1 / 2 / 3;
+        grid-area: area1;
+      }
+
+      &:nth-of-type(3) {
+        grid-area: area3;
+      }
+      &:nth-of-type(4) {
+        grid-area: area5;
       }
       &:nth-of-type(5) {
-        grid-area: 1 / 5 / 4 / 6 span;
+        grid-area: area4;
+      }
+      &:nth-of-type(6) {
+        grid-area: area6;
+        max-height: 158px;
       }
     }
   }

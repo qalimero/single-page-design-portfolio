@@ -8,6 +8,8 @@ import {HeaderFooterComponent} from "./molecules/header-footer/header-footer.com
 import {HomeComponent} from "./templates/home/home.component";
 import {HomepageComponent} from "../pages/homepage/homepage.component";
 import { CardGridComponent } from './organisms/card-grid/card-grid.component';
+import { TitleParagraphButtonComponent } from './organisms/title-paragraph-button/title-paragraph-button.component';
+import { TitleH2Component } from './atoms/title-h2/title-h2.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { CardGridComponent } from './organisms/card-grid/card-grid.component';
     HomeComponent,
     HomepageComponent,
     CardGridComponent,
+    TitleParagraphButtonComponent,
+    TitleH2Component,
   ]
 })
 export class ComponentsModule {

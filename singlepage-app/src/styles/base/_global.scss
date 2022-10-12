@@ -133,6 +133,7 @@ $textSize: (
     large: $size_56,
     medium: $size_40,
     small: $size_32,
+    mobile: $size_26,
   ),
   text: (
     medium: $size_18,
@@ -155,11 +156,12 @@ $btnStyle: (
     tablet: $size_16,
   ),
   color: (
-    btnHeaderFooter:mapColor(primary-white),
+    btnHeaderFooter: mapColor(primary-white),
     btnBody: mapColor(light-red),
   ),
   bgColor: (
-    primary :mapColor(primary-black),
+    primary: mapColor(primary-black),
+    secondary: mapColor(light-red),
   ),
   lineHeight: (
     mobile: $size_28,

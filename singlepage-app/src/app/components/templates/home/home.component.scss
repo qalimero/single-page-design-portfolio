@@ -1,9 +1,16 @@
 @import './../../../../styles/base/global';
 
-  .introduction {
-    margin: $size_32 0;
-    &__text {
-      margin-top: $size_16;
-      padding: 0 $size_29;
-    }
+.introduction {
+  margin: $size_32 0;
+
+  &__text {
+    margin-top: $size_16;
+    padding: 0 $size_29;
   }
+}
+
+
+
+
+
+

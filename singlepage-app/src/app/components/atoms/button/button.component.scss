@@ -8,4 +8,7 @@
         @include text-style($color: btnStyle(color, btnHeaderFooter));
         @include btn($bgColor: btnStyle(bgColor, primary));
       }
+      &-secondary {
+        @include btn($bgColor: btnStyle(bgColor, primary));
+      }
     }

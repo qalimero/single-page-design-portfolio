@@ -1,0 +1,3 @@
+.title-h1 {
+  @include text-style($color: mapColor(primary-black), $size: textSize(heading, mobile),$lineHeight: textSize(lineHeightMobile, paragraph), $align: center, $weight: 700);
+}
