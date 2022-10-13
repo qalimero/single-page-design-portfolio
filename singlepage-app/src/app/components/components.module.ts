@@ -10,11 +10,14 @@ import {HomepageComponent} from "../pages/homepage/homepage.component";
 import { CardGridComponent } from './organisms/card-grid/card-grid.component';
 import { TitleParagraphButtonComponent } from './organisms/title-paragraph-button/title-paragraph-button.component';
 import { TitleH2Component } from './atoms/title-h2/title-h2.component';
+import {NgImageSliderModule} from "ng-image-slider";
+import {SliderImageComponent} from "./slider-image/slider-image.component";
 
 
 @NgModule({
   imports: [
     CommonModule,
+    NgImageSliderModule,
   ],
   exports: [
     ButtonComponent,
@@ -23,7 +26,7 @@ import { TitleH2Component } from './atoms/title-h2/title-h2.component';
     TitleH1Component,
     HeaderFooterComponent,
     HomeComponent,
-    HomepageComponent
+    HomepageComponent,
   ],
   declarations: [
     ButtonComponent,
@@ -36,6 +39,8 @@ import { TitleH2Component } from './atoms/title-h2/title-h2.component';
     CardGridComponent,
     TitleParagraphButtonComponent,
     TitleH2Component,
+    SliderImageComponent
+
   ]
 })
 export class ComponentsModule {

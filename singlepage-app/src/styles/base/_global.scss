@@ -142,6 +142,7 @@ $textSize: (
   ),
   lineHeightMobile: (
     h1: $size_45,
+    h2: $size_33,
     paragraph: $size_26,
   )
 );
@@ -157,7 +158,7 @@ $btnStyle: (
   ),
   color: (
     btnHeaderFooter: mapColor(primary-white),
-    btnBody: mapColor(light-red),
+    btnBody: mapColor(primary-white),
   ),
   bgColor: (
     primary: mapColor(primary-black),

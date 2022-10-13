@@ -1,0 +1,17 @@
+@import './../../../../styles/base/mixins';
+@import './../../../../styles/base/global';
+
+:host {
+  .title-h2 {
+    margin-top: $size_40;
+    margin-bottom: $size_24;
+  }
+  .paragraph{
+    margin-bottom: $size_24;
+  }
+  .btn {
+    display: block;
+    margin: 0 auto;
+  }
+
+}

@@ -1,1 +1,5 @@
-{}
+{
+  "dependencies": {
+    "ng-image-slider": "^6.1.0"
+  }
+}

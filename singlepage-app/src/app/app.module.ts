@@ -13,7 +13,7 @@ import {ComponentsModule} from "./components/components.module";
     BrowserModule,
     BrowserAnimationsModule,
     CdkListboxModule,
-    ComponentsModule
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
