@@ -1,0 +1,8 @@
+<div class="my-work-slider">
+  <ng-image-slider [images]="imgCollection" [infinite]="true" [animationSpeed]="0.5" [showArrow]="false" [imageSize]="{width: 270, height: 180, space: 8}" #nav></ng-image-slider>
+  <div class="my-work-slider__controls">
+    <app-button classToAdd="btn__slider btn__slider-prev" (click)="prevImageClick()">Prev</app-button>
+    <app-button classToAdd="btn__slider btn__slider-next" (click)="nextImageClick()">Next</app-button>
+  </div>
+</div>
+

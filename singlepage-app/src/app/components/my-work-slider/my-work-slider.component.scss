@@ -1,0 +1,14 @@
+@use "sass:map";
+@import './../../../styles/base/mixins';
+@import './../../../styles/base/global';
+
+
+  .my-work-slider {
+    margin: $size_32 calc( $size_16 - $size_32);
+    &__controls {
+      margin-top: $size_32;
+      text-align: center;
+    }
+  }
+
+
