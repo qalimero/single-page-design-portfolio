@@ -163,9 +163,10 @@ $btnStyle: (
   bgColor: (
     primary: mapColor(primary-black),
     secondary: mapColor(light-red),
+    slider: mapColor(primary-black),
   ),
   lineHeight: (
     mobile: $size_28,
-  )
+  ),
 );
 

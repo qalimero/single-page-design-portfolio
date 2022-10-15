@@ -5,9 +5,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CdkListboxModule} from "@angular/cdk/listbox";
 import {ComponentsModule} from "./components/components.module";
 
+
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,

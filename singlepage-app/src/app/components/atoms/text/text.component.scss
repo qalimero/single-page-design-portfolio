@@ -6,4 +6,7 @@
   &__card{
   @include text-style($color: mapColor(primary-white), $size: textSize(text, card), $weight: 700);
   }
+  &-secondary {
+    @include text-style($color: mapColor(primary-white));
+  }
 }

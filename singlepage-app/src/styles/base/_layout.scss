@@ -11,4 +11,7 @@ body {
   @include mq(large) {
     margin: 0 $size_165;
   }
+  &__container {
+    margin-bottom: 100px;
+  }
 }

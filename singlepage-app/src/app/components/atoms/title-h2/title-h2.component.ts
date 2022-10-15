@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TitleH2Component implements OnInit {
   @Input() title = '';
+  @Input() classToAdd = '';
 
   constructor() { }
 

@@ -7,12 +7,17 @@
                 text="With over ten years of experience in various design disciplines, I’m your one-stop shop for your design needs."></app-text>
     </div>
   </section>
-  <app-card-grid></app-card-grid>
-  <section class="presentation">
+  <div class="layout__container">
+    <app-card-grid></app-card-grid>
+  </div>
+  <section class="presentation layout__container">
     <app-image classToAdd="image--presentation" srcToAdd="../../assets/images/image-amy.webp"></app-image>
     <app-title-paragraph-button></app-title-paragraph-button>
   </section>
-  <section class="my-work">
-    <app-slider-image></app-slider-image>
+  <section class="my-work layout__container">
+    <app-title-h2 title="My work"></app-title-h2>
+    <app-my-work-slider></app-my-work-slider>
+  </section>
+  <section class="contact">
   </section>
 </main>

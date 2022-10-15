@@ -4,4 +4,7 @@
 
 .title-h2 {
   @include text-style($color: mapColor(primary-black), $size: textSize(heading, mobile),$lineHeight: textSize(lineHeightMobile, h2), $align: center, $weight: 700);
+  &-primary {
+    @include text-style($color: mapColor(primary-white));
+  }
 }
