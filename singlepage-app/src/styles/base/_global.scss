@@ -9,6 +9,7 @@ SIZE VARIABLE
 ===================== */
 
 $size_0: 0rem;
+$size_1: 0.06rem;
 $size_2: .125rem;
 $size_4: .25rem;
 $size_6: .375rem;
@@ -131,7 +132,7 @@ $backgroundColor: mapColor(light-cream);
 $textSize: (
   heading: (
     large: $size_56,
-    medium: $size_40,
+    medium: $size_44,
     small: $size_32,
     mobile: $size_26,
   ),
@@ -144,6 +145,11 @@ $textSize: (
     h1: $size_45,
     h2: $size_33,
     paragraph: $size_26,
+  ),
+  lineHeightTablet: (
+    h1: $size_55,
+    h2: $size_40,
+    paragraph: $size_28,
   )
 );
 

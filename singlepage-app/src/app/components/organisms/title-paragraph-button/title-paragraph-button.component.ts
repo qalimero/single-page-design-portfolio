@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-title-paragraph-button',
@@ -7,5 +7,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class TitleParagraphButtonComponent  {
+  @Input() selectTemplate =  '';
+
   constructor() { }
 }

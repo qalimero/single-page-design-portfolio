@@ -4,7 +4,7 @@
 
 
   .my-work-slider {
-    margin: $size_32 calc( $size_16 - $size_32);
+    margin: $size_32 calc( $size_16 - $size_32) 0;
     &__controls {
       margin-top: $size_32;
       text-align: center;

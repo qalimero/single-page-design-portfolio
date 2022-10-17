@@ -1,5 +1,7 @@
 <main class="layout">
-  <app-header-footer></app-header-footer>
+  <header class="header">
+    <app-header-footer></app-header-footer>
+  </header>
   <section class="introduction">
     <app-title-h1 text="Design solutions made easy"></app-title-h1>
     <div class="introduction__text">
@@ -12,12 +14,16 @@
   </div>
   <section class="presentation layout__container">
     <app-image classToAdd="image--presentation" srcToAdd="../../assets/images/image-amy.webp"></app-image>
-    <app-title-paragraph-button></app-title-paragraph-button>
+    <app-title-paragraph-button selectTemplate="false"></app-title-paragraph-button>
   </section>
   <section class="my-work layout__container">
     <app-title-h2 title="My work"></app-title-h2>
     <app-my-work-slider></app-my-work-slider>
   </section>
   <section class="contact">
+    <app-title-paragraph-button selectTemplate="true"></app-title-paragraph-button>
   </section>
+  <footer class="footer">
+    <app-header-footer></app-header-footer>
+  </footer>
 </main>

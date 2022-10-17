@@ -13,5 +13,8 @@ body {
   }
   &__container {
     margin-bottom: 100px;
+    @include mq(medium) {
+      margin-bottom: 120px;
+    }
   }
 }

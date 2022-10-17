@@ -2,16 +2,57 @@
 @import './../../../../styles/base/global';
 
 :host {
-  .title-h2 {
-    margin-top: $size_40;
-    margin-bottom: $size_24;
-  }
-  .paragraph{
-    margin-bottom: $size_24;
-  }
-  .btn {
-    display: block;
-    margin: 0 auto;
+  .tpb {
+    .title-h2 {
+      margin-top: $size_40;
+      margin-bottom: $size_24;
+    }
+
+    .paragraph {
+      margin-bottom: $size_24;
+    }
+
+    .btn {
+      display: block;
+      margin: 0 auto;
+    }
+
+    @include mq(medium) {
+      &-tablet {
+        max-width: 339px;
+
+        .title-h2,
+        .paragraph,
+        .btn {
+          text-align: left;
+        }
+
+        .title-h2 {
+          margin-top: 0;
+        }
+
+        .btn {
+          margin: initial;
+        }
+      }
+    }
   }
 
+  .tpb-secondary {
+    background-color: mapColor(primary-black);
+    padding: $size_48 $size_24;
+    border-radius: $size_10;
+
+    .title-h2 {
+      margin-top: 0;
+    }
+
+    .paragraph-secondary {
+      margin-bottom: $size_24;
+    }
+    .btn {
+      display: block;
+      margin: auto;
+    }
+  }
 }

@@ -1,5 +1,14 @@
-<div class="tpb">
-  <app-title-h2 title="I’m Amy, and I’d love to work on your next project"></app-title-h2>
-  <app-text classToAdd="paragraph" text="I love working with others to create beautiful design solutions. I’ve designed everything from brand illustrations to complete mobile apps. I’m also handy with a camera!"></app-text>
-  <app-button classToAdd="btn-secondary" text="Free Consultation"></app-button>
+<div class="tpb tpb-tablet">
+  <ng-template  [ngIf]="this.selectTemplate == 'false'">
+    <app-title-h2 title="I’m Amy, and I’d love to work on your next project"></app-title-h2>
+    <app-text classToAdd="paragraph" text="I love working with others to create beautiful design solutions. I’ve designed everything from brand illustrations to complete mobile apps. I’m also handy with a camera!"></app-text>
+    <app-button classToAdd="btn-secondary" text="Free Consultation"></app-button>
+  </ng-template>
 </div>
+<ng-template [ngIf]="this.selectTemplate == 'true'">
+  <div class="tpb-secondary">
+    <app-title-h2 classToAdd="title-h2-primary" title="Book a call with me"></app-title-h2>
+    <app-text classToAdd="paragraph-secondary" text="I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there."></app-text>
+    <app-button classToAdd="btn-secondary" text="Free Consultation"></app-button>
+  </div>
+</ng-template>

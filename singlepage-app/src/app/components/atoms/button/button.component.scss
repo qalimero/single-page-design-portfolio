@@ -2,7 +2,7 @@
 @import './../../../../styles/base/global';
 
     .btn {
-      @include btn($borderRadius: $size_29, $borderColor: transparent, $paddingVertical: $size_28, $paddingHorizontal: $size_6);
+      @include btn($borderRadius: $size_28, $borderColor: transparent, $paddingVertical: $size_28, $paddingHorizontal: $size_6);
       @include text-style($size: btnStyle(size, mobile), $lineHeight: btnStyle(lineHeight, mobile), $weight: bold);
       &-primary {
         @include text-style($color: btnStyle(color, btnHeaderFooter));
@@ -44,5 +44,9 @@
             transform: translate(-50%, -50%);
           }
         }
+      }
+      @include mq(medium) {
+        @include text-style($letterSpacing: $size_1);
+        @include btn($paddingVertical: $size_45, $paddingHorizontal: $size_12);
       }
     }

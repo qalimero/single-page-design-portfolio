@@ -7,6 +7,11 @@
   @include text-style($color: mapColor(primary-white), $size: textSize(text, card), $weight: 700);
   }
   &-secondary {
+    @extend .paragraph;
     @include text-style($color: mapColor(primary-white));
+  }
+  @include mq(medium) {
+    margin-top: $size_24;
+    @include text-style( $size: textSize(text, medium),$lineHeight: textSize(lineHeightTablet, paragraph));
   }
 }

@@ -1,18 +1,36 @@
 @import './../../../../styles/base/global';
-
-
+.header {
+  margin-top: $size_16;
+  @include mq(medium) {
+    margin-top: $size_34;
+  }
+}
 .introduction {
   margin: $size_32 0;
+
 
   &__text {
     margin-top: $size_16;
     padding: 0 $size_29;
+    @include mq(medium) {
+      padding: 0 $size_58;
+    }
+  }
+  @include mq(medium) {
+    margin: $size_64 0;
   }
 }
-
-
-
-
-
-
-
+.presentation {
+  @include mq(medium) {
+    margin-left: -5.5rem;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+  }
+}
+.contact {
+  margin-bottom: $size_40;
+}
+.footer {
+  margin-bottom: $size_32;
+}

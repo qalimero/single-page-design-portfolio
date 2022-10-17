@@ -5,6 +5,11 @@
 .title-h2 {
   @include text-style($color: mapColor(primary-black), $size: textSize(heading, mobile),$lineHeight: textSize(lineHeightMobile, h2), $align: center, $weight: 700);
   &-primary {
+    @extend .title-h2;
     @include text-style($color: mapColor(primary-white));
+
+  }
+  @include mq(medium) {
+    @include text-style($size: textSize(heading, small ),$lineHeight: textSize(lineHeightTablet, h2));
   }
 }
