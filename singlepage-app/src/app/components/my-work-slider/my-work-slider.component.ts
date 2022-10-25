@@ -1,5 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
-import {NgImageSliderComponent} from "ng-image-slider";
+import {Component} from '@angular/core';
 
 
 @Component({
@@ -9,29 +8,33 @@ import {NgImageSliderComponent} from "ng-image-slider";
 
 })
 export class MyWorkSliderComponent  {
-  @ViewChild('nav') slider: NgImageSliderComponent | undefined;
-  imgCollection: Array<object> = [
+  imgCollection = [
     {
+      id: 1,
       image: '../assets/images/image-slide-1.jpg',
       thumbImage: '../assets/images/image-slide-1.jpg',
       alt: ""
     },
     {
+      id: 2,
       image: '../assets/images/image-slide-2.jpg',
       thumbImage: '../assets/images/image-slide-2.jpg',
       alt: ""
     },
     {
+      id: 3,
       image: '../assets/images/image-slide-3.jpg',
       thumbImage: '../assets/images/image-slide-3.jpg',
       alt: ""
     },
     {
+      id: 4,
       image: '../assets/images/image-slide-4.jpg',
       thumbImage: '../assets/images/image-slide-4.jpg',
       alt: ""
     },
     {
+      id: 5,
       image: '../assets/images/image-slide-5.jpg',
       thumbImage: '../assets/images/image-slide-5.jpg',
       alt: ""
@@ -39,12 +42,4 @@ export class MyWorkSliderComponent  {
   ]
 
   constructor() {}
-
-  prevImageClick() {
-    this.slider?.prev();
-  }
-
-  nextImageClick() {
-    this.slider?.next();
-  }
 }

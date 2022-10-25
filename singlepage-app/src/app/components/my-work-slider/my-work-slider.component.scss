@@ -4,8 +4,22 @@
 
 
   .my-work-slider {
-    margin: $size_32 calc( $size_16 - $size_32) 0;
-    &__controls {
+    height: 180px;
+    margin: $size_32 calc( $size_16 - $size_32) 100px;
+    &_wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      height: 100%;
+      overflow: hidden;
+      &_image {
+        height: 100%;
+        max-width: 270px;
+        border-radius: 5px;
+      }
+    }
+    &_controls {
       margin-top: $size_32;
       text-align: center;
     }

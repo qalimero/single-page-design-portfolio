@@ -12,7 +12,7 @@
         @include text-style($color: btnStyle(color, btnHeaderFooter));
         @include btn($bgColor: btnStyle(bgColor, secondary));
       }
-      &__slider {
+      &_slider {
         @include btn($bgColor: btnStyle(bgColor, slider));
         width: $size_64;
         height: $size_64;
