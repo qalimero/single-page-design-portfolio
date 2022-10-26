@@ -8,6 +8,7 @@ import {Component} from '@angular/core';
 
 })
 export class MyWorkSliderComponent  {
+  img = document.getElementById('slide');
   imgCollection = [
     {
       id: 1,
@@ -42,4 +43,5 @@ export class MyWorkSliderComponent  {
   ]
 
   constructor() {}
+
 }

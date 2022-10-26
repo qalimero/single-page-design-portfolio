@@ -4,6 +4,7 @@
 
 
   .my-work-slider {
+    width: 100vw;
     height: 180px;
     margin: $size_32 calc( $size_16 - $size_32) 100px;
     &_wrapper {
@@ -16,6 +17,7 @@
       &_image {
         height: 100%;
         max-width: 270px;
+        margin: 0 8px;
         border-radius: 5px;
       }
     }
