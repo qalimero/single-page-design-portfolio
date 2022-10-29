@@ -1,37 +1,51 @@
-import {Component} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ContentChildren,
+  Directive,
+  ElementRef,
+  OnInit,
+  QueryList,
+  ViewChildren
+} from '@angular/core';
+import {MyWorkSliderItemDirective} from "./my-work-slider-item.directive";
 
-
+@Directive({
+  selector: '.app-my-work-slider-item'
+})
+export class MyWorkSliderItemElement {
+}
 @Component({
   selector: 'app-my-work-slider',
   templateUrl: './my-work-slider.component.html',
   styleUrls: ['./my-work-slider.component.scss'],
-
 })
-export class MyWorkSliderComponent  {
-  img = document.getElementById('slide');
+
+export class MyWorkSliderComponent implements OnInit, AfterViewInit {
+  @ContentChildren(MyWorkSliderItemDirective) items: QueryList<MyWorkSliderItemDirective> | undefined;
+  @ViewChildren(MyWorkSliderComponent, {read: ElementRef}) private itemsElements : QueryList<ElementRef> | undefined;
+  private itemWidth : number | undefined;
+  carouselWrapperStyle = {}
+
+  slide = document.getElementById('slide');
+  prev = document.getElementById('prev');
+  next = document.getElementById('next');
+
   imgCollection = [
     {
-      id: 1,
       image: '../assets/images/image-slide-1.jpg',
-      thumbImage: '../assets/images/image-slide-1.jpg',
       alt: ""
     },
     {
-      id: 2,
       image: '../assets/images/image-slide-2.jpg',
-      thumbImage: '../assets/images/image-slide-2.jpg',
       alt: ""
     },
     {
-      id: 3,
       image: '../assets/images/image-slide-3.jpg',
-      thumbImage: '../assets/images/image-slide-3.jpg',
       alt: ""
     },
     {
-      id: 4,
       image: '../assets/images/image-slide-4.jpg',
-      thumbImage: '../assets/images/image-slide-4.jpg',
       alt: ""
     },
     {
@@ -44,4 +58,12 @@ export class MyWorkSliderComponent  {
 
   constructor() {}
 
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    this.itemWidth = this.itemsElements?.first.nativeElement.getBoundingClientRect().width;
+    this.carouselWrapperStyle = {
+      width: `${this.itemWidth}px`
+    }
+  }
 }
