@@ -49,9 +49,7 @@ export class MyWorkSliderComponent implements OnInit, AfterViewInit {
       alt: ""
     },
     {
-      id: 5,
       image: '../assets/images/image-slide-5.jpg',
-      thumbImage: '../assets/images/image-slide-5.jpg',
       alt: ""
     }
   ]
