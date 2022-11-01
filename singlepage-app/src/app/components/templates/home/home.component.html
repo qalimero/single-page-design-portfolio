@@ -18,7 +18,13 @@
   </section>
   <section class="my-work layout__container">
     <app-title-h2 title="My work"></app-title-h2>
-    <app-my-work-slider></app-my-work-slider>
+    <app-my-work-slider>
+      <ng-container *ngFor="let item of imgCollection">
+      <ng-container *carouselItem>
+        <img class="my-work-slider_wrapper_item" [alt]="item.alt" [src]="item.image" id="slide">
+      </ng-container>
+      </ng-container>
+    </app-my-work-slider>
   </section>
   <section class="contact">
     <app-title-paragraph-button selectTemplate="true"></app-title-paragraph-button>
