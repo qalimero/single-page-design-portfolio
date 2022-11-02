@@ -6,7 +6,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   styleUrls: ['./home.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  {
   private btnHeaderFooterBtn = false;
   imgCollection = [
     {
@@ -30,9 +30,4 @@ export class HomeComponent implements OnInit {
       alt: ""
     }
   ]
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

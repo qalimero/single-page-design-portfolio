@@ -9,7 +9,6 @@ import {ComponentsModule} from "./components/components.module";
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     BrowserModule,
