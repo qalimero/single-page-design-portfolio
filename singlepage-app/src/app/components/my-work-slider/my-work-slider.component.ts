@@ -43,7 +43,7 @@ export class MyWorkSliderComponent implements AfterViewInit {
   @ViewChild('workSlider') private workSlider: ElementRef | undefined;
   @Input() timing = '250ms ease-in';
   @Input() showControls = true;
-  private itemWidth!: number;
+  private itemWidth : number | undefined ;
   private player: AnimationPlayer | undefined;
   private currentSlide = 0;
   carouselWrapperStyle = {};
@@ -51,11 +51,23 @@ export class MyWorkSliderComponent implements AfterViewInit {
   constructor(private builder: AnimationBuilder) {
   }
 
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.itemWidth = this.itemsElements?.first.nativeElement.getBoundingClientRect().width;
+
+      this.carouselWrapperStyle = {
+        width: `${this.itemWidth}px`
+      };
+    });
+  };
+
   next() {
     if (this.currentSlide + 1 === this.items?.length) return;
     this.currentSlide = (this.currentSlide + 1) % this.items!.length;
-    let offset = this.currentSlide * this.itemWidth;
+    let offset = this.currentSlide * this.itemWidth!;
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
+    console.log(this.currentSlide)
+    console.log(this.itemWidth)
     this.player = myAnimation.create(this.workSlider?.nativeElement);
     this.player.play();
   }
@@ -69,18 +81,10 @@ export class MyWorkSliderComponent implements AfterViewInit {
   prev() {
     if (this.currentSlide === 0) return;
     this.currentSlide = ((this.currentSlide - 1) + this.items!.length) % this.items!.length;
-    const offset = this.currentSlide * this.itemWidth;
+    const offset = this.currentSlide * this.itemWidth!;
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
     this.player = myAnimation.create(this.workSlider?.nativeElement);
     this.player.play();
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.itemWidth = this.itemsElements?.first.nativeElement.getBoundingClientRect().width;
-      this.carouselWrapperStyle = {
-        width: `${this.itemWidth}px`
-      };
-    });
-  };
 }
