@@ -3,7 +3,7 @@ import {
   Component,
   ContentChildren,
   Directive,
-  ElementRef, Input,
+  ElementRef, Input, OnInit,
   QueryList, ViewChild,
   ViewChildren,
   ViewEncapsulation
@@ -37,7 +37,7 @@ export class MyWorkSliderItemElement {
   `
 })
 
-export class MyWorkSliderComponent implements AfterViewInit {
+export class MyWorkSliderComponent implements AfterViewInit, OnInit{
   @ContentChildren(MyWorkSliderItemDirective) items: QueryList<MyWorkSliderItemDirective> | undefined;
   @ViewChildren(MyWorkSliderComponent, {read: ElementRef}) private itemsElements: QueryList<ElementRef> | undefined;
   @ViewChild('workSlider') private workSlider: ElementRef | undefined;
@@ -52,14 +52,22 @@ export class MyWorkSliderComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.itemWidth = this.itemsElements?.first.nativeElement.getBoundingClientRect().width;
 
+  };
+  ngOnInit() {
+    setTimeout(() => {
+      this.itemWidth = this.itemsElements?.first?.nativeElement.getBoundingClientRect().width;
       this.carouselWrapperStyle = {
         width: `${this.itemWidth}px`
       };
     });
-  };
+  }
+
+  private buildAnimation(offset: number) {
+    return this.builder.build([
+      animate(this.timing, style({transform: `translateX(-${offset}px)`}))
+    ]);
+  }
 
   next() {
     if (this.currentSlide + 1 === this.items?.length) return;
@@ -67,15 +75,8 @@ export class MyWorkSliderComponent implements AfterViewInit {
     let offset = this.currentSlide * this.itemWidth!;
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
     console.log(this.currentSlide)
-    console.log(this.itemWidth)
     this.player = myAnimation.create(this.workSlider?.nativeElement);
     this.player.play();
-  }
-
-  private buildAnimation(offset = 0) {
-    return this.builder.build([
-      animate(this.timing, style({transform: `translateX(-${offset}px)`}))
-    ]);
   }
 
   prev() {
@@ -86,5 +87,4 @@ export class MyWorkSliderComponent implements AfterViewInit {
     this.player = myAnimation.create(this.workSlider?.nativeElement);
     this.player.play();
   }
-
 }
