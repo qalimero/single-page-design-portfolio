@@ -37,7 +37,7 @@ export class MyWorkSliderItemElement {
   `
 })
 
-export class MyWorkSliderComponent implements AfterViewInit, OnInit{
+export class MyWorkSliderComponent implements OnInit{
   @ContentChildren(MyWorkSliderItemDirective) items: QueryList<MyWorkSliderItemDirective> | undefined;
   @ViewChildren(MyWorkSliderComponent, {read: ElementRef}) private itemsElements: QueryList<ElementRef> | undefined;
   @ViewChild('workSlider') private workSlider: ElementRef | undefined;
@@ -51,9 +51,6 @@ export class MyWorkSliderComponent implements AfterViewInit, OnInit{
   constructor(private builder: AnimationBuilder) {
   }
 
-  ngAfterViewInit() {
-
-  };
   ngOnInit() {
     setTimeout(() => {
       this.itemWidth = this.itemsElements?.first?.nativeElement.getBoundingClientRect().width;
