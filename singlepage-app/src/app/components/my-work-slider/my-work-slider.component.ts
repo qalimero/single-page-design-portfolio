@@ -23,9 +23,9 @@ export class MyWorkSliderItemElement {
   styleUrls: ['./my-work-slider.component.scss'],
   encapsulation: ViewEncapsulation.None,
   template: `
-    <section class="my-work-slider">
+    <section class="my-work-slider" >
       <div class="my-work-slider_wrapper" #workSlider>
-        <ng-container *ngFor="let item of items; let i = index">
+        <ng-container *ngFor="let item of items; let i = index" >
           <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
         </ng-container>
       </div>
@@ -48,15 +48,20 @@ export class MyWorkSliderComponent implements OnInit{
   private currentSlide = 0;
   carouselWrapperStyle = {};
 
+
   constructor(private builder: AnimationBuilder) {
   }
 
   ngOnInit() {
     setTimeout(() => {
-      this.itemWidth = this.itemsElements?.first?.nativeElement.getBoundingClientRect().width;
+      this.itemWidth = this.itemsElements?.first?.nativeElement?.getBoundingClientRect().width;
       this.carouselWrapperStyle = {
         width: `${this.itemWidth}px`
       };
+      //Console log of carouselWrapperStyle
+      type Object = keyof typeof this.carouselWrapperStyle;
+      const myVar = 'width' as Object;
+      console.log(this.carouselWrapperStyle[myVar])
     });
   }
 
@@ -66,12 +71,14 @@ export class MyWorkSliderComponent implements OnInit{
     ]);
   }
 
+
   next() {
     if (this.currentSlide + 1 === this.items?.length) return;
     this.currentSlide = (this.currentSlide + 1) % this.items!.length;
-    let offset = this.currentSlide * this.itemWidth!;
+    const offset = this.currentSlide * (!this.itemWidth ? 1 : this.itemWidth);
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
     console.log(this.currentSlide)
+
     this.player = myAnimation.create(this.workSlider?.nativeElement);
     this.player.play();
   }
@@ -79,7 +86,8 @@ export class MyWorkSliderComponent implements OnInit{
   prev() {
     if (this.currentSlide === 0) return;
     this.currentSlide = ((this.currentSlide - 1) + this.items!.length) % this.items!.length;
-    const offset = this.currentSlide * this.itemWidth!;
+    const offset = this.currentSlide * (!this.itemWidth ? 1 : this.itemWidth);
+    console.log(offset)
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
     this.player = myAnimation.create(this.workSlider?.nativeElement);
     this.player.play();
