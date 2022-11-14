@@ -1,20 +1,9 @@
 import {
-  Component,
-  ContentChildren,
-  Directive,
-  ElementRef, Input, OnInit,
-  QueryList, ViewChild,
-  ViewChildren,
+  Component, ElementRef,
+  Input, OnInit, ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import {MyWorkSliderItemDirective} from "./my-work-slider-item.directive";
 import {AnimationBuilder, AnimationFactory, AnimationPlayer, animate, style} from "@angular/animations";
-
-@Directive({
-  selector: '.app-my-work-slider-item'
-})
-export class MyWorkSliderItemElement {
-}
 
 @Component({
   selector: 'app-my-work-slider',
@@ -23,9 +12,10 @@ export class MyWorkSliderItemElement {
   encapsulation: ViewEncapsulation.None,
   template: `
     <section class="my-work-slider" >
-      <div class="my-work-slider_wrapper" #workSlider>
-        <ng-container *ngFor="let item of items; let i = index" >
-          <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
+      <div class="my-work-slider_wrapper" >
+        <ng-container *ngFor="let slide of slides; let i = index">
+           <img [alt]="slide.alt" class="my-work-slider_wrapper_item" *ngIf="i === currentSlide"
+                [src]="slide.image" #workSlider>
         </ng-container>
       </div>
       <div class="my-work-slider_controls" *ngIf="showControls">
@@ -37,23 +27,18 @@ export class MyWorkSliderItemElement {
 })
 
 export class MyWorkSliderComponent implements OnInit{
-  @ContentChildren(MyWorkSliderItemDirective) items: QueryList<MyWorkSliderItemDirective> | undefined;
-  @ViewChildren(MyWorkSliderComponent, {read: ElementRef}) private itemsElements: QueryList<ElementRef> | undefined;
-  @ViewChild('workSlider') private workSlider: ElementRef | undefined;
+  @ViewChild('workSlider') private slider : ElementRef | undefined;
+  @Input() slides : any;
   @Input() timing = '250ms ease-in';
   @Input() showControls = true;
-  private itemWidth : number =  10;
+  currentSlide = 0;
   private player: AnimationPlayer | undefined;
-  private currentSlide = 0;
-  carouselWrapperStyle = {};
-
 
   constructor(private builder: AnimationBuilder) {
   }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.itemWidth = this.itemsElements?.first?.nativeElement?.getBoundingClientRect().width;
+      //this.itemWidth = this.itemsElements?.first?.nativeElement?.getBoundingClientRect().width;
       // try to convert the object into a string and into a number
 
      /* let objWidth = Object.keys(Object.getPrototypeOf(this.itemsElements?.first?.nativeElement?.getBoundingClientRect().width));
@@ -61,45 +46,55 @@ export class MyWorkSliderComponent implements OnInit{
       let elementWidth : number =  +objWidth;
       this.itemWidth = elementWidth;*/
 
-      console.log("return number ?",this.itemWidth);
-      this.carouselWrapperStyle = {
-        width: `${this.itemWidth}px`
-      };
+      //console.log("return number ?",this.itemWidth);
+      //width: `${this.itemWidth}px`
+      //};
       //Console log of carouselWrapperStyle
-      type Object = keyof typeof this.carouselWrapperStyle;
-      const myVar = 'width' as Object;
-      console.log(this.carouselWrapperStyle[myVar])
-    });
+      //type Object = keyof typeof this.carouselWrapperStyle;
+      //const myVar = 'width' as Object;
+      //console.log(this.carouselWrapperStyle[myVar]);
   }
 
   private buildAnimation(offset: number) {
-    console.log(offset)
     return this.builder.build([
       animate(this.timing, style({transform: `translateX(-${offset}px)`}))
     ]);
-
   }
 
 
   next() {
-    if (this.currentSlide + 1 === this.items?.length) return;
+    const next = this.currentSlide + 1;
+    this.currentSlide = next === this.slides.length ? 0 : next;
+    const offset = this.slider?.nativeElement.offsetWidth;
+    console.log("next clicked, new current slide is: ", offset);
+    const myAnimation: AnimationFactory = this.buildAnimation(this.slider?.nativeElement);
+    this.player = myAnimation.create(this.slider?.nativeElement);
+    this.player.play();
+/*    if (this.currentSlide + 1 === this.items?.length) return;
     this.currentSlide = (this.currentSlide + 1) % this.items!.length;
-    const offset = this.currentSlide * (!this.itemWidth ? 1 : this.itemWidth);
+    * (!this.itemWidth ? 1 : this.itemWidth);
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
     console.log(offset)
 
     this.player = myAnimation.create(this.workSlider?.nativeElement);
-    this.player.play();
+    this.player.play();*/
   }
 
   prev() {
-    if (this.currentSlide === 0) return;
+    const previous = this.currentSlide - 1;
+    this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
+    console.log("previous clicked, new current slide is: ", this.currentSlide);
+    const myAnimation: AnimationFactory = this.buildAnimation(this.slider?.nativeElement.offsetWidth);
+    console.log(this.slider)
+    this.player = myAnimation.create(this.slider?.nativeElement);
+    this.player.play();
+/*    if (this.currentSlide === 0) return;
     this.currentSlide = ((this.currentSlide - 1) + this.items!.length) % this.items!.length;
     const offset = this.currentSlide * (!this.itemWidth ? 1 : this.itemWidth);
     console.log(offset)
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
     this.player = myAnimation.create(this.workSlider?.nativeElement);
-    this.player.play();
+    this.player.play();*/
   }
 }
 

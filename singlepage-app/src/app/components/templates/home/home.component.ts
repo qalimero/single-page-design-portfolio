@@ -6,9 +6,9 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   styleUrls: ['./home.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HomeComponent  {
-  private btnHeaderFooterBtn = false;
-  imgCollection = [
+export class HomeComponent {
+
+  slides = [
     {
       image: '../assets/images/image-slide-1.jpg',
       alt: ""
@@ -30,4 +30,5 @@ export class HomeComponent  {
       alt: ""
     }
   ]
+
 }
