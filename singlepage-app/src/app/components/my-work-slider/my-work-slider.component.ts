@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   Component,
   ContentChildren,
   Directive,
@@ -43,7 +42,7 @@ export class MyWorkSliderComponent implements OnInit{
   @ViewChild('workSlider') private workSlider: ElementRef | undefined;
   @Input() timing = '250ms ease-in';
   @Input() showControls = true;
-  private itemWidth : number | undefined ;
+  private itemWidth : number =  10;
   private player: AnimationPlayer | undefined;
   private currentSlide = 0;
   carouselWrapperStyle = {};
@@ -55,6 +54,14 @@ export class MyWorkSliderComponent implements OnInit{
   ngOnInit() {
     setTimeout(() => {
       this.itemWidth = this.itemsElements?.first?.nativeElement?.getBoundingClientRect().width;
+      // try to convert the object into a string and into a number
+
+     /* let objWidth = Object.keys(Object.getPrototypeOf(this.itemsElements?.first?.nativeElement?.getBoundingClientRect().width));
+      console.log("return number ?",objWidth);
+      let elementWidth : number =  +objWidth;
+      this.itemWidth = elementWidth;*/
+
+      console.log("return number ?",this.itemWidth);
       this.carouselWrapperStyle = {
         width: `${this.itemWidth}px`
       };
@@ -66,9 +73,11 @@ export class MyWorkSliderComponent implements OnInit{
   }
 
   private buildAnimation(offset: number) {
+    console.log(offset)
     return this.builder.build([
       animate(this.timing, style({transform: `translateX(-${offset}px)`}))
     ]);
+
   }
 
 
@@ -77,7 +86,7 @@ export class MyWorkSliderComponent implements OnInit{
     this.currentSlide = (this.currentSlide + 1) % this.items!.length;
     const offset = this.currentSlide * (!this.itemWidth ? 1 : this.itemWidth);
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
-    console.log(this.currentSlide)
+    console.log(offset)
 
     this.player = myAnimation.create(this.workSlider?.nativeElement);
     this.player.play();
@@ -93,3 +102,4 @@ export class MyWorkSliderComponent implements OnInit{
     this.player.play();
   }
 }
+

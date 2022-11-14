@@ -11,7 +11,6 @@ export class HeaderFooterComponent implements OnInit {
       src: 'assets/images/logo.svg',
     };
   constructor( private el: ElementRef ) {
-    console.log(this.el.nativeElement)
   }
 
   ngOnInit(): void {
