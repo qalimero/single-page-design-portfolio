@@ -8,27 +8,4 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class HomeComponent {
 
-  slides = [
-    {
-      image: '../assets/images/image-slide-1.jpg',
-      alt: ""
-    },
-    {
-      image: '../assets/images/image-slide-2.jpg',
-      alt: ""
-    },
-    {
-      image: '../assets/images/image-slide-3.jpg',
-      alt: ""
-    },
-    {
-      image: '../assets/images/image-slide-4.jpg',
-      alt: ""
-    },
-    {
-      image: '../assets/images/image-slide-5.jpg',
-      alt: ""
-    }
-  ]
-
 }
