@@ -4,15 +4,12 @@
 
 
   .my-work-slider {
-    width: 100vw;
 
     margin: $size_32 calc( $size_16 - $size_32);
-    overflow: hidden;
     &_wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
+      display: grid;
+      place-items: center;
+      position: relative;
       height: 180px;
       width: 100vw;
       &_item {
