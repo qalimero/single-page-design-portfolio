@@ -10,11 +10,13 @@ import {HomepageComponent} from "../pages/homepage/homepage.component";
 import { CardGridComponent } from './organisms/card-grid/card-grid.component';
 import { TitleParagraphButtonComponent } from './organisms/title-paragraph-button/title-paragraph-button.component';
 import { TitleH2Component } from './atoms/title-h2/title-h2.component';
-import { MyWorkSliderComponent } from './my-work-slider/my-work-slider.component';
+import { MyWorkSliderComponent } from "./my-work-slider/my-work-slider.component";
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   imports: [
     CommonModule,
+    SwiperModule
   ],
   exports: [
     ButtonComponent,
@@ -36,7 +38,7 @@ import { MyWorkSliderComponent } from './my-work-slider/my-work-slider.component
     CardGridComponent,
     TitleParagraphButtonComponent,
     TitleH2Component,
-    MyWorkSliderComponent,
+    MyWorkSliderComponent
   ]
 })
 export class ComponentsModule {

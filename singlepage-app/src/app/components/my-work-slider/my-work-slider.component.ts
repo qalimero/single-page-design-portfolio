@@ -1,45 +1,52 @@
 import {
-  Component, NgModule,
+  AfterViewInit,
+  Component, ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { SwiperModule } from 'swiper/angular';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper/core';
+import SwiperCore, {Keyboard, Mousewheel, Navigation, SwiperOptions} from 'swiper';
+import {SwiperComponent} from "swiper/angular";
 
-@NgModule({
-  imports: [SwiperModule],
-})
-
+SwiperCore.use([Navigation, Mousewheel, Keyboard]);
 @Component({
   selector: 'app-my-work-slider',
-  exportAs: 'slider',
+  template: `
+    <swiper [config]="config" class="my-work-slider swiper mySwiper">
+      <ng-template swiperSlide  *ngFor="let slide of slides">
+        <img [alt]="slide.alt" class="my-work-slider_wrapper_item"
+             [src]="slide.src">
+      </ng-template>
+    </swiper>
+    <div class="my-work-slider_controls">
+      <app-button id="prev" (click)="swipePrev()" classToAdd="btn_slider btn_slider-prev">Prev</app-button>
+      <app-button id="next" (click)="swipeNext()" classToAdd="btn_slider btn_slider-next">Next</app-button>
+    </div>
+  `,
   styleUrls: ['./my-work-slider.component.scss'],
   encapsulation: ViewEncapsulation.None,
-
-  template: `
-    <section class="my-work-slider">
-      <div class="my-work-slider_wrapper" #workSlider>
-        <ng-container *ngFor="let slide of slides; index as i">
-          <img [alt]="slide.alt" class="my-work-slider_wrapper_item"
-               [src]="slide.src">
-        </ng-container>
-      </div>
-      <div class="my-work-slider_controls">
-        <app-button id="prev" classToAdd="btn_slider btn_slider-prev">Prev</app-button>
-        <app-button id="next" classToAdd="btn_slider btn_slider-next">Next</app-button>
-      </div>
-    </section>
-  `
 })
 
 export class MyWorkSliderComponent {
-
+  @ViewChild(SwiperComponent) swiper: SwiperComponent | undefined;
+  config: SwiperOptions = {
+    speed: 500,
+    slidesPerView: "auto",
+    centeredSlides: true,
+    navigation: true,
+    keyboard: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        spaceBetween: 16,
+      },
+      // when window width is >= 480px
+      768: {
+        spaceBetween: 30
+      },
+    }
+  }
   slides = [
     {
       src: '../assets/images/image-slide-1.jpg',
-      alt: ""
-    },
-    {
-      src: '../assets/images/image-slide-2.jpg',
       alt: ""
     },
     {
@@ -56,6 +63,13 @@ export class MyWorkSliderComponent {
     }
   ]
 
-  constructor() {}
+  constructor() {
+  }
+  swipePrev() {
+    this.swiper?.swiperRef.slidePrev();
+  }
 
+  swipeNext() {
+    this.swiper?.swiperRef.slideNext();
+  }
 }

@@ -1,9 +1,11 @@
 @import './../../styles/base/global';
 body {
   background-color: $backgroundColor;
+  max-width: 100vw;
 }
 .layout {
   display: grid;
+  max-width: 100vw;
   margin: 0 $size_16;
   @include mq(medium) {
     margin: 0 $size_40;
@@ -12,9 +14,16 @@ body {
     margin: 0 $size_165;
   }
   &__container {
+    max-width: 100vw;
     margin-bottom: 100px;
     @include mq(medium) {
       margin-bottom: 120px;
+      &-grid{
+        max-width: 690px;
+      }
+      &-offset{
+        max-width: 772px;
+      }
     }
   }
 }

@@ -1,52 +1,76 @@
 @import './../../../../styles/base/mixins';
 @import './../../../../styles/base/global';
 
-    .btn {
-      @include btn($borderRadius: $size_28, $borderColor: transparent, $paddingVertical: $size_28, $paddingHorizontal: $size_6);
-      @include text-style($size: btnStyle(size, mobile), $lineHeight: btnStyle(lineHeight, mobile), $weight: bold);
-      &-primary {
-        @include text-style($color: btnStyle(color, btnHeaderFooter));
-        @include btn($bgColor: btnStyle(bgColor, primary));
-      }
-      &-secondary {
-        @include text-style($color: btnStyle(color, btnHeaderFooter));
-        @include btn($bgColor: btnStyle(bgColor, secondary));
-      }
-      &_slider {
-        @include btn($bgColor: btnStyle(bgColor, slider));
-        width: $size_64;
-        height: $size_64;
-        border-radius: 50%;
-        line-height: 0;
-        &-prev{
-          position: relative;
-          margin-right: $size_8;
-          &:before{
-            content: url("../../../../assets/images/icon-arrow-left.svg");
-            position: absolute;
-            width: $size_16;
-            height: $size_16;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-          }
-        }
-        &-next{
-          position: relative;
-          margin-left: $size_8;
-          &:before{
-            content: url("../../../../assets/images/icon-arrow-right.svg");
-            position: absolute;
-            width: $size_16;
-            height: $size_16;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-          }
-        }
-      }
-      @include mq(medium) {
-        @include text-style($letterSpacing: $size_1);
-        @include btn($paddingVertical: $size_45, $paddingHorizontal: $size_12);
-      }
+.btn {
+  @include btn($borderRadius: $size_28, $borderColor: transparent, $paddingVertical: $size_28, $paddingHorizontal: $size_6);
+  @include text-style($size: btnStyle(size, mobile), $lineHeight: btnStyle(lineHeight, mobile), $weight: bold);
+
+  &-primary {
+    @include text-style($color: btnStyle(color, btnHeaderFooter));
+    @include btn($bgColor: btnStyle(bgColor, primary));
+
+    &:hover {
+      @include btn($bgColor: mapColor(galactic-blue));
     }
+  }
+
+  &-secondary {
+    @include text-style($color: btnStyle(color, btnHeaderFooter));
+    @include btn($bgColor: btnStyle(bgColor, secondary));
+
+    &:hover {
+      @include btn($bgColor: mapColor(summer-yellow));
+    }
+  }
+  @include mq(medium) {
+    @include btn($paddingVertical: $size_45, $paddingHorizontal: $size_12);
+  }
+}
+
+.btn_slider {
+  @include btn($bgColor: btnStyle(bgColor, slider));
+  width: $size_64;
+  height: $size_64;
+  padding: 0;
+  border-radius: 50%;
+  line-height: 0;
+
+  &-prev {
+    position: relative;
+    margin-right: $size_8;
+
+    &:before {
+      content: url("../../../../assets/images/icon-arrow-left.svg");
+      position: absolute;
+      width: $size_16;
+      height: $size_16;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      @include btn($bgColor: mapColor(galactic-blue));
+    }
+  }
+
+  &-next {
+    position: relative;
+    margin-left: $size_8;
+
+    &:before {
+      content: url("../../../../assets/images/icon-arrow-right.svg");
+      position: absolute;
+      width: $size_16;
+      height: $size_16;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      @include btn($bgColor: mapColor(galactic-blue));
+    }
+  }
+}
+
