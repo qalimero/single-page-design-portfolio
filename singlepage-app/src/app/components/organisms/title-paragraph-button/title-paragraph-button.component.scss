@@ -36,6 +36,9 @@
         }
       }
     }
+    @include mq(large){
+      max-width: 540px;
+    }
   }
 
   .tpb-secondary {
@@ -53,6 +56,24 @@
     .btn {
       display: block;
       margin: auto;
+    }
+    @include mq(medium){
+      margin: 0 $size_40;
+      padding: $size_56 $size_75;
+    }
+    @include mq(large) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 165px;
+      margin-right: 165px;
+        .title-h2,
+        .paragraph-secondary{
+          text-align: left;
+        }
+      &-desktop {
+        max-width: 540px;
+      }
     }
   }
 }

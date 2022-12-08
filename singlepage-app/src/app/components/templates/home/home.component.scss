@@ -19,6 +19,9 @@
   @include mq(medium) {
     margin: $size_64 0;
   }
+  @include mq(large) {
+    margin-bottom: $size_80;
+  }
 }
 .presentation {
   @include mq(medium) {
@@ -26,6 +29,13 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    margin-right: $size_40;
+  }
+  @include mq(large){
+    align-items: center;
+    margin-left: 165px;
+    margin-right: 165px;
+    margin-bottom: 88px;
   }
 }
 .contact {

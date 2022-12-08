@@ -7,8 +7,10 @@
 </div>
 <ng-template [ngIf]="this.selectTemplate == 'true'">
   <div class="tpb-secondary">
-    <app-title-h2 classToAdd="title-h2-primary" title="Book a call with me"></app-title-h2>
-    <app-text classToAdd="paragraph-secondary" text="I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there."></app-text>
+    <div class="tpb-secondary-desktop">
+      <app-title-h2 classToAdd="title-h2-primary" title="Book a call with me"></app-title-h2>
+      <app-text classToAdd="paragraph-secondary" text="I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there."></app-text>
+    </div>
     <app-button classToAdd="btn-secondary" text="Free Consultation"></app-button>
   </div>
 </ng-template>

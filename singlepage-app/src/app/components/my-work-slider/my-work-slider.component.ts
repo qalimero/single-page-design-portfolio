@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   Component, ViewChild,
   ViewEncapsulation
 } from '@angular/core';
@@ -42,6 +41,10 @@ export class MyWorkSliderComponent {
       768: {
         spaceBetween: 30
       },
+      1440: {
+        spaceBetween: 30,
+        centeredSlides: false,
+      }
     }
   }
   slides = [

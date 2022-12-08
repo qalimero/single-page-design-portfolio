@@ -11,4 +11,13 @@
   app-button {
     text-align: right;
   }
+  @include mq(medium){
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+    margin: 0 $size_40;
+  }
+  @include mq(large) {
+    margin: 0 $size_165;
+  }
 }

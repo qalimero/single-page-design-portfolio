@@ -1,6 +1,6 @@
 @use "sass:map";
 @import '~swiper/swiper.min.css';
-@import "swiper/css/bundle";
+//@import "swiper/css/bundle";
 @import './../../../styles/base/mixins';
 @import './../../../styles/base/global';
 
@@ -45,14 +45,19 @@
     }
   }
   @include mq(medium) {
+    margin: $size_56 0 0;
     &_wrapper {
       &_item {
         max-width: 540px;
         height: 360px;
       }
     }
+    &_controls {
+      margin-top: $size_56;
+    }
     .swiper-slide {
       width: 540px !important;
     }
+
   }
 }
